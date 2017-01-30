@@ -25,7 +25,7 @@ Anyway. The big question is, it does not matter, it does not matter. There is no
 - _Think_ in **proportions**
 - _Use_ **%** |  **flexible mensure**
   - **%** in **font-size** is **x%** _more_ size than your **parent**
-  - **To text** use **em**
+  - For **text** use **em**
 
 #### TECHNIQUES
 - **MAX-WIDTH** | Used to _limit_ your _responsive_
@@ -46,6 +46,7 @@ parent {
 ```
 ##### IMAGES RESPONSIVES
 > Rename your img with type that **resolution** | nameImg _@_ **resolution** .format
+
 Example: **logo@2x.png**
 
 - **MAX-WIDTH** | _Does not allow_ the image to **exceed its maximum size**
@@ -71,10 +72,13 @@ img{
 > It's pretty much optimize a full-size image so it's reasonably sized for multiple devices. We reduce image quality, increase compression, use lighter formats, etc.
 
 ###### FUTURE
-- See _about_ **<picture />**
+- See _about_
+```html
+<picture />
+```
 
 #### MEDIA QUERIES
-- _Do think_ **MOBILE FIRST** | Write css default in **mobile** and add _break points_ in _media queries_ **desktop**
+- _Do think_ **MOBILE FIRST** | Write css default in **mobile** and add _break points_ in _media queries_ for **desktop**
   - Use **min-width**
 - **Condition layout** | _Specify_ the _break points_
 - **Syntax**
@@ -107,6 +111,11 @@ img{
 <!-- MANUAL MODE -->
 <meta name='viewport' content='width=320'>
 ```
+- **Viewport** to **iOS** use:
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1">.
+```
+
 
 ## WORKFLOW
 - **Desktop browser**
@@ -137,27 +146,23 @@ img{
     - **7mm** = **40px**  | **2mm** _padding_ **10 px** _between_ | **MINIMUM**
     - **9mm** = **50px**  | **2mm** _padding_ **10 px** _between_ | **RECOMMEND**
     - **5 < mm** = **30px**  | **2mm** _padding_ **10 px** _between_ | **IMPOSSIBLE**
-- **Don't use **HOVER** | Hover in mobile is hard
+- **Don't** _use_ **HOVER** | Hover in mobile is hard
 
 
 ### CONTENT PARITY
 - **All** _functions_ **desktop** in **mobile**
-  - _Format_ different
-  - _Colors_ different
-  - _Positions_ different
+  - **Format** different
+  - **Colors** different
+  - **Positions** different
 
 ## OBSERVATIONS
 - In _final_ all is **pixel**
-- **em** _font-size: **120%** equal _font-size:_ **1.2em**
+- **em** _font-size:_ **120%** equal _font-size:_ **1.2em**
 - **inline-block**
   - The inline-block is interesting by simulating a line of text with its elements. If there is no more _"character"_ on the line, the _"word"_ slides down the line.
 - Create **break points** for _YOUR_ **CONTENT**
 - **DEBUG**
   - Using **iOS emulator** with _xcode_, _inspect element_ enabled **dev mode** in _safari_
-- **Viewport** to **iOS** use:
-```html
-<meta name="viewport" content="width=device-width, initial-scale=1">.
-```
 - **weinre** _tool_ for **remote debbug** in **devices**
 
 - **Physical Pixel** | This is __less__ **pixel** in the _display_ _1x1_
