@@ -7,6 +7,7 @@ Learning responsive
 - http://www.dropboxwiki.com/tips-and-tricks/host-websites-with-dropbox
 - https://developer.chrome.com/devtools/docs/remote-debugging
 - https://www.npmjs.com/package/weinre
+- https://icomoon.io/app/#/select
 
 ## MOBILE SITE or RESPONSIVE DESIGNER
 > When we talk about mobile, what exactly is mobile?
@@ -44,12 +45,33 @@ parent {
 }
 ```
 ##### IMAGES RESPONSIVES
+> Rename your img with type that **resolution** | nameImg _@_ **resolution** .format
+Example: **logo@2x.png**
+
 - **MAX-WIDTH** | _Does not allow_ the image to **exceed its maximum size**
 ```css
 img{
   max-width: 100%;
 }
 ```
+- **Change <img />** with _resolution_ using new attribute **SRCSET**
+```html
+<img src="name.png" srcset="name@2x.png 2x, name.png 1x" />
+```
+
+###### SVG
+- **Compatibility**
+  -  IE8 >
+  -  android 3 =>
+```html
+<img src="logo.svg" onerror="this.src='logo.png'; this.onerror=null" />
+```
+
+###### COMPRESSIVE IMAGES
+> It's pretty much optimize a full-size image so it's reasonably sized for multiple devices. We reduce image quality, increase compression, use lighter formats, etc.
+
+###### FUTURE
+- See _about_ **<picture />**
 
 #### MEDIA QUERIES
 - _Do think_ **MOBILE FIRST** | Write css default in **mobile** and add _break points_ in _media queries_ **desktop**
@@ -65,9 +87,16 @@ img{
 - **Syntax** for _old browsers_
 ```css
 @media only screen (min-width|max-width|width|device-width|min-height|max-height|height|device-height: size orientation:portrait|landscape){
-
 }
 ```
+- __Check__ **DPI**
+- **Performance**
+- **Visual quality**
+  - For **legacy** _use_ **-webkit-min-device-pixel-ratio** | It does not have **dppx**
+```css
+@media (resolution|min-resolution|max-resolution: 1|1.5|2dppx){}
+```
+
 
 #### VIEWPORT
 - **Added** **viewport** to _alert mobile_ that your page is _responsive_
@@ -96,6 +125,27 @@ img{
   - UX
   - Size
 
+## UX MOBILE TIPS
+- **Functions focused**
+- **Content Prioritization**
+
+### TOUCH FIRST
+- _Think_ ever in **touch**
+- _Think_ _size_ in **MM** **millimeters**
+- **SIZE BUTTONS**
+  - _Microsoft_
+    - **7mm** = **40px**  | **2mm** _padding_ **10 px** _between_ | **MINIMUM**
+    - **9mm** = **50px**  | **2mm** _padding_ **10 px** _between_ | **RECOMMEND**
+    - **5 < mm** = **30px**  | **2mm** _padding_ **10 px** _between_ | **IMPOSSIBLE**
+- **Don't use **HOVER** | Hover in mobile is hard
+
+
+### CONTENT PARITY
+- **All** _functions_ **desktop** in **mobile**
+  - _Format_ different
+  - _Colors_ different
+  - _Positions_ different
+
 ## OBSERVATIONS
 - In _final_ all is **pixel**
 - **em** _font-size: **120%** equal _font-size:_ **1.2em**
@@ -109,3 +159,11 @@ img{
 <meta name="viewport" content="width=device-width, initial-scale=1">.
 ```
 - **weinre** _tool_ for **remote debbug** in **devices**
+
+- **Physical Pixel** | This is __less__ **pixel** in the _display_ _1x1_
+- **Device Independent Pixel (DPI or CSS pixel)** | Convert the _css_ pixel in **physical pixel** _2x1_
+- **Device Pixel Ratio (dPR)** | Proportion in **Physical Pixel** x **DPI**
+  - **dPR** = **Physical Pixel** / **DPIs**
+    - **1** _normal_
+    - **2** _retina_
+- **Few colors** use **PNG 8** _quality_
